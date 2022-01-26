@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="../assets/face-detect.svg">
+    <title>Face Recognition</title>
+
+    <!-- Icon link tag to material icons design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- CSS styling links -->
+    <link rel="stylesheet" href="../css/index-style.css">
+    <link rel="stylesheet" href="../css/popup-style.css">
+    <link rel="stylesheet" href="../css/thirdparty-style.css">
+
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+        integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="../dist/camera.js" defer></script>
+</head>
+
+<body>
+    <div class="camera-msg">
+        <img src="https://s2.svgbox.net/hero-outline.svg?ic=camera&color=1e5984" width="120" height="120">
+        <h2>Please allow camera access.</h2>
+        <button onclick="location.reload()" class="button-retry">Retry.</button>
+    </div>
+    <!-- video access -->
+    <div id="canvas-wrapper" style="display: none">
+        <canvas id="canvas" ></canvas>
+        <video id="camera" autoplay></video>
+    </div>
+
+    <div id="modal_add" class="modal-overlay">
+        <div class="add-user-modal">
+            <div class="wrapper">
+                <div class="modal-top-bar">
+                    <h2>Add New Face</h2>
+                    <div class="close-modal" id="close_modal">
+                        <span>&times;</span>
+                    </div>
+                </div>
+                <div class="modal-main-section">
+                    <img src="../assets/avatar_icon.jpg" alt="User">
+                    <div class="name-input-modal">
+                        <p>Please give the new face/user a name</p>
+                        <input id="name_input" type="text" placeholder="Name">
+                    </div>
+                    <div class="caution-info">
+                        <span class="material-icons">warning</span>
+                        <p>Note that the name cannot be changed afterwards!</p>
+                    </div>
+                    <div class="save-user-checkbox">
+                        <label class="switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                        <p>Save face</p>
+                        <div class="tooltip tooltip--right"
+                            data-tooltip="When checking this option the face will be saved to a database so your face can be detected later, if you only want it to be temporarily just leave this option.">
+                            <span class="material-icons" id="add_user_info">info</span>
+                        </div>
+                    </div>
+                    <button id="submit_face">Detect Face</button>
+                </div>
+            </div>
+            <!-- <div class="loader" id="loader" >
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div> -->
+        </div>
+    </div>
+
+    <div id="toast"></div>
+</body>
+
+</html>

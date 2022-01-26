@@ -1,0 +1,138 @@
+
+.overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.354);
+    min-width: 100%; 
+    min-height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    animation: fade-out 0.3s ease;
+}
+
+.overlay.show{
+    opacity: 1;
+    pointer-events: all;
+    animation: fade-in 0.3s;
+}
+
+/* modal animation */
+
+@keyframes fade-in { 
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes fade-out { 
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+}
+
+/* END */
+
+/* modal styling */
+
+.popup-modal{
+    width: 350px;
+    height: 402px;
+    background-color: #161C27;
+    color: rgb(187, 187, 187);
+    padding: 1.5rem 1.5rem;
+    border-radius: 5px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    gap: 15px;
+}
+
+.content input{
+    height: 35px;
+    font-size: medium;
+    border: none;
+    background-color: #222b3d84;
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.646);
+    padding: 0 10px;
+}
+
+.name-label{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.user-id-lbl{
+    font-size: 15px;
+    color: gray;
+    opacity: 0.5;
+}
+
+.user-img{
+    width: 224px;
+    border-radius: 3px;
+}
+
+.content input:focus{
+    outline: none;
+}
+
+/* END */
+
+/* button modal styling */
+
+.content .btns button{
+    width: 100%;
+    border: none;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 17px;
+    background-color: #1e2839;
+    color: #fff;
+}
+
+.content .btns button:nth-child(2){
+    background-color: #192c4c;
+}
+
+.content .btns button:nth-child(2):hover{
+    background-color: #192c4ca1;
+}
+
+.content .btns button:hover{
+    cursor: pointer;
+    background-color: #1e2839ac;
+    color: rgba(255, 255, 255, 0.707);
+}
+
+/* END */
+
+/* media queries */
+
+@media only screen and (max-width: 410px) {
+    .popup-modal{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .popup-modal{
+        width: 270px;
+    }
+}

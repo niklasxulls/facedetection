@@ -1,0 +1,36 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 4rem;
+    background-color: #161C27;
+}
+
+.message{
+    color: #fff;
+    position: absolute;
+    left: 20%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.message p {
+    max-width: 350px;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 530px) {
+    .message{
+        text-align: center;
+        position: relative;
+        left: unset;
+    }
+}

@@ -1,0 +1,35 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+Options -Indexes
+
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files .gitignore>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+	Order allow,deny
+	Deny from all
+	Satisfy all
+</Files>
+
+# better to redirect 403 to 404 since a possible attacker could gain information about a website
+# when seeing that there is a resource forbidden to access
+
+# replace in prod
+ErrorDocument 404 http://localhost/projects/LogicAIFaceRecProject/notfound
+ErrorDocument 403 http://localhost/projects/LogicAIFaceRecProject/notfound
+# replace in production
+
+#ErrorDocument 404 actualdomain/errors/notfound
+#ErrorDocument 403 actualdomain/errors/forbidden

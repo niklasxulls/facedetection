@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="./assets/face-detect.svg">
+    <title>Admin Panel</title>
+
+    <!-- CSS styling links -->
+    <link rel="stylesheet" href="./css/admin-style.css">
+    <link rel="stylesheet" href="./css/popup-style.css">
+    <link rel="stylesheet" href="./css/thirdparty-style.css">
+
+    <!-- SCRIPTS -->
+    <script type="module" src="./js/admin.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h2>Face Recognition POS-Logic Project</h2>
+        <h4>by Perkovic Noa & Ullsperger Niklas 2021</h4>
+    </header>
+
+    <h4 class="no-users-label">No users in database.</h4>
+    <div class="users">
+        <!-- User cards appending -->
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="overlay">
+        <div class="popup-modal" id="modal">
+            <div>
+                <h3>Settings for User <span id="user-name-displayed">Name</span></h3>
+                <p class="user-id-lbl">#<span id="user-id">ID</span></p>
+            </div>
+            <div class="content">
+                <img class="user-img" src="./assets/avatar_icon.jpg" alt="avatar">
+                <div class="name-label">
+                    <label>Name:</label>
+                    <input type="text" id="name">
+                </div>
+                <div class="btns">
+                    <button id="cancel-btn">Cancel</button>
+                    <button id="submit-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- toasts and loading widgets -->
+    <div id="toast"></div>
+
+    <div class="loading" id="loader">
+        <div class="loader"></div>
+    </div>
+</body>
+
+</html>

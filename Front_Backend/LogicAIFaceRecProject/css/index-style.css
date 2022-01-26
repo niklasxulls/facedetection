@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: #161C27;
+}
+
+/* CAMERA FEEDBACK */
+
+.camera-msg{
+    text-align: center;
+    color: #1e5984;
+}
+
+/* END */
+
+/* BUTTON CSS */
+
+.button-retry{
+    margin: 20px;
+    border: none;
+    border-radius: 25px;
+    color: #4ab0f8;
+    font-size: 17px;
+    background-color: #1e5984;
+    padding: 5 10;
+    width: 120px;
+    height: 40px;
+}
+
+.button-retry:hover{
+    background-color: #1e5a84c9;
+    cursor: pointer;
+}
+
+.button-retry:focus{
+    outline: none;
+}
+
+/* END */
+
+/* modal styling */
+
+.modal-overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.456);
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-overlay.show{
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.4s ease;
+}
+
+.add-user-modal{
+    width: 450px;
+    height: 680px;
+    background-color: #161C27;
+    position: fixed;
+    right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .add-user-modal {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      left: 0;
+    }
+
+    .modal-top-bar{
+        min-width: 80%;
+    }
+}
+
+.modal-top-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin: 1.5rem 2rem;
+}
+
+.modal-top-bar span{
+    font-size:  1.8rem;
+}
+
+/* modal middle section */
+
+.modal-main-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 3rem 2rem 1rem 2rem;
+}
+
+.modal-main-section img{
+    width: 230px;
+}
+
+.modal-main-section .caution-info {
+    color: rgb(204, 85, 85);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    border: solid rgb(204, 85, 85) 1px;
+    border-radius: 10px;
+}
+
+.name-input-modal{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: rgb(214, 214, 214);
+}
+
+.name-input-modal input{
+    border: none;
+    background-color: #222c3d;
+    color: rgba(255, 255, 255, 0.816);
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: medium;
+}
+
+.name-input-modal input:focus{
+    outline: none;
+}
+
+.name-input-modal input::placeholder{
+    color: rgba(255, 255, 255, 0.537);
+}
+
+.modal-main-section button{
+    border: none;
+    background-color: #222c3d;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.816);
+    font-size: medium;
+    padding: 15px 0;
+}
+
+.modal-main-section button:hover{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.673);
+    background-color: #222c3daf;
+}
+
+.modal-main-section button:focus{
+    outline: none;
+}
+
+
+.close-modal{
+    height: 20px;
+    padding: 15px 6px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+.close-modal:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.313);
+}
+
+/* END */
+
+/* checkbox styling */
+
+.save-user-checkbox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(214, 214, 214);
+}
+
+.save-user-checkbox input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.save-user-checkbox span{
+    font-size: 17px;
+}
+
+.switch {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 35px;
+}
+  
+.switch input {
+    display:none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 3px;
+    content: "";
+    height: 14px;
+    left: 3px;
+    position: absolute;
+    transition: .4s;
+    width: 14px;
+}
+
+input:checked + .slider {
+    background-color: #2f5c9b9c;
+}
+
+input:checked + .slider:before {
+    transform: translateX(15px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* checkbox end */
+
+#canvas {
+    position: absolute;
+    z-index: 10;
+}
+
+#canvas-wrapper.show {
+    display: block !important;
+}
